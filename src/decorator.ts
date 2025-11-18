@@ -158,16 +158,39 @@ export function imageDecorator(
                             result += `\r\n\r\n`;
                         }
 
-                        let maxSizeConfig = '';
-                        if (maxWidth > 0) {
-                            maxSizeConfig = `|width=${maxWidth}`;
-                        } else if (maxHeight > 0) {
-                            maxSizeConfig = `|height=${maxHeight}`;
+                        // 对于 data URI，使用 HTML 标签以获得更好的兼容性
+                        let imageHtml = '';
+                        if (imagePath.startsWith('data:image')) {
+                            // 转义单引号为 %27
+                            const escapedPath = imagePath.replace(/'/g, '%27');
+                            
+                            // 计算尺寸
+                            let sizeAttr = '';
+                            if (maxWidth > 0) {
+                                sizeAttr = `width="${maxWidth}"`;
+                            } else if (maxHeight > 0) {
+                                sizeAttr = `height="${maxHeight}"`;
+                            } else {
+                                sizeAttr = 'height="100"'; // 默认高度
+                            }
+                            
+                            imageHtml = `<img src="${escapedPath}" ${sizeAttr} />`;
+                        } else {
+                            // 非 data URI 使用 Markdown 语法
+                            let maxSizeConfig = '';
+                            if (maxWidth > 0) {
+                                maxSizeConfig = `|width=${maxWidth}`;
+                            } else if (maxHeight > 0) {
+                                maxSizeConfig = `|height=${maxHeight}`;
+                            }
+                            imageHtml = `![${imagePath}](${imagePath}${maxSizeConfig})`;
                         }
-                        result += `![${imagePath}](${imagePath}${maxSizeConfig})`;
+                        
+                        result += imageHtml;
 
                         const contents = new vscode.MarkdownString(result);
                         contents.isTrusted = true;
+                        contents.supportHtml = true;
 
                         return new vscode.Hover(contents, matchingDecoratorAndItem.decoration.range);
                     };

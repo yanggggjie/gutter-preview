@@ -19,7 +19,7 @@ export function copyFile(source: string, target: string, cb: (err?: any) => void
     wr.on('error', function (err) {
         done(err);
     });
-    wr.on('close', function (ex) {
+    wr.on('close', function () {
         done();
     });
     rd.pipe(wr);
