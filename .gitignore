@@ -5,3 +5,5 @@ npm-debug.log
 .vscode-test
 testfiles
 *.vsix
+vscode-gutter-preview-**
+.DS_Store

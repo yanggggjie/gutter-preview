@@ -1,19 +1,25 @@
-.vscode/**
-typings/**
-out/**
-test/**
-src/**
-grunt/**
-gruntfile.js
-.travis*
-**/*.map
-.gitignore
-tsconfig.json
-vsc-extension-quickstart.md
-testfiles
-node_modules
-.devcontainer
-webpack.config.js
-!images
-!dist/extension.js
-!dist/server.js
+# .vscode/**
+# typings/**
+# out/**
+# test/**
+# src/**
+# grunt/**
+# gruntfile.js
+# .travis*
+# **/*.map
+# .gitignore
+# tsconfig.json
+# vsc-extension-quickstart.md
+# testfiles
+# node_modules
+# .devcontainer
+# webpack.config.js
+# !images
+# !dist/extension.js
+# !dist/server.js
+**
+!images/**
+!dist/**
+!package.json
+!README.md
+!LICENSE
