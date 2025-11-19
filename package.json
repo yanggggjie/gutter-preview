@@ -1,6 +1,5 @@
 {
   "name": "vscode-gutter-preview-v2",
-  "private": true,
   "description": "Shows image preview in the gutter and on hover. Forked from kisstkondoros/gutter-preview with AI-powered bug fixes.",
   "author": "yanggggjie (Forked from Tamas Kiss)",
   "publisher": "yanggggjie",
