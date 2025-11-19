@@ -1,24 +1,33 @@
 {
-  "name": "vscode-gutter-preview",
+  "name": "vscode-gutter-preview-v2",
   "private": true,
-  "description": "Shows image preview in the gutter and on hover",
-  "author": "Tamas Kiss",
-  "publisher": "kisstkondoros",
+  "description": "Shows image preview in the gutter and on hover. Forked from kisstkondoros/gutter-preview with AI-powered bug fixes.",
+  "author": "yanggggjie (Forked from Tamas Kiss)",
+  "publisher": "yanggggjie",
   "license": "MIT",
-  "version": "0.32.2",
-  "displayName": "Image preview",
+  "version": "0.40.0",
+  "displayName": "Image preview V2",
   "icon": "images/logo.png",
   "engines": {
     "vscode": "^1.88.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kisstkondoros/gutter-preview.git"
+    "url": "https://github.com/yanggggjie/gutter-preview.git"
   },
   "keywords": [
     "vscode",
     "image",
-    "preview"
+    "preview",
+    "gutter",
+    "hover",
+    "data-uri",
+    "svg",
+    "css",
+    "scss",
+    "less",
+    "markdown",
+    "url"
   ],
   "categories": [
     "Other"
