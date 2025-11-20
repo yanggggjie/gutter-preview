@@ -7,6 +7,7 @@
   "version": "0.40.0",
   "displayName": "Image preview V2",
   "icon": "images/logo.png",
+  "packageManager": "yarn@1.22.22",
   "engines": {
     "vscode": "^1.88.1"
   },
